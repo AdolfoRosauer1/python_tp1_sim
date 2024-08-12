@@ -1,0 +1,4 @@
+/.venv
+/neighbors.txt
+/static_particles.txt
+/__pycache__
