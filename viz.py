@@ -13,7 +13,8 @@ def load_particles(file_path):
             particle_id = int(parts[0])
             x = float(parts[1])
             y = float(parts[2])
-            particles.append(Particle(particle_id, x, y))
+            radius = float(parts[3])
+            particles.append(Particle(particle_id, x, y, radius))
     return particles
 
 def load_neighbors(file_path):
@@ -31,7 +32,7 @@ def main():
     particles = load_particles(r'C:\Users\juana\Documents\ITBA\current\sim\tp1_SIM\static_particles.txt')
     neighbor_data = load_neighbors(r'C:\Users\juana\Documents\ITBA\current\sim\tp1_SIM\neighbors.txt')
 
-    visualizer = ParticleVisualizer(particles, neighbor_data)
+    visualizer = ParticleVisualizer(particles, neighbor_data, Rc=50)
     visualizer.visualize()
 
 if __name__ == "__main__":
